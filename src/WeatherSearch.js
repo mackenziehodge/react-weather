@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./WeatherSearch.css"
 
 
 export default function WeatherSearch() {
@@ -32,10 +33,11 @@ let form=(
       <form onSubmit={handleSubmit}>
         <input
           type="search"
-          placeholder="Enter a city"
+          placeholder="Enter a city...."
+          className="search-engine"
           onChange={updateCity}
         />
-        <input type="submit" value="Search" className="btn" />
+        <input type="submit" className="search-button" value="Search" />
       </form>
 );
 if (loaded){
@@ -46,7 +48,7 @@ if (loaded){
      <li>Description: {weather.description}</li>
      <li>Humidity: {weather.humidity}%</li>
      <li>Wind:{Math.round(weather.wind)}km/h</li>
-     <li><img src={weather.icon}alt={weather.description}/></li>
+     <li><img src={weather.icon}alt={weather.description}className="weather-icon"/></li>
      </ul> 
     </div>
   );}else{
