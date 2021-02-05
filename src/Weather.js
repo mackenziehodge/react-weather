@@ -1,24 +1,34 @@
-import React from "react"
-import axios from "axios"
+import React from "react";
 import Loader from "react-loader-spinner";
 
-
-export default function Weather(props){
-
-    function handleResponse(response){
-        alert(`the weather in ${props.city} is ${(Math.round(response.data.main.temp))}°C`)
-    }
-    let apikey="d077de28ca0d9666603e584385e14f50"
-    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apikey}&units=metric`;
-    
-axios.get(apiUrl).then(handleResponse);
+export default function Weather(props) {
+  if (props.data) {
     return (
-
-    <Loader
-        type="puff"
-        color="magenta"
-        height={100}
-        width={100}
-        timeout={3000} //3 secs
-      />);
+      <div>
+        <p>Current weather in: {props.data.city}</p>
+        <ul>
+          <li>Temperature: {props.data.temp}ºC</li>
+          <li>Description: {props.data.description}</li>
+          <li>Humidity: {props.data.humidity}%</li>
+          <li>Wind: {props.data.wind} km/h</li>
+          <li>
+            <img
+              src={`http://openweathermap.org/img/wn/${props.data.icon}@2x.png`}
+              alt="Weather Icon"
+            />
+          </li>
+        </ul>
+      </div>
+    );
+  } else {
+    return (
+      <Loader
+        type="Circles"
+        color="pink"
+        height={50}
+        width={50}
+        timeout={10000}
+      />
+    );
+  }
 }
