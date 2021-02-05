@@ -1,11 +1,11 @@
 import React from "react";
-import Search from "./Search";
+import WeatherSearch from "./WeatherSearch";
 
 export default function App() {
   return (
     <div className="App">
       <h1>Weather</h1>
-      <Search />
+      <WeatherSearch />
     </div>
   );
 }
