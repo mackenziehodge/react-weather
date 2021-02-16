@@ -1,11 +1,11 @@
 import React from "react";
 import WeatherSearch from "./WeatherSearch";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 
 export default function App() {
   return (
-    <div className="body"><div className="App">
+    <div className="App"><div className="container">
       <h1>Weather</h1>
       <WeatherSearch />
     </div>
