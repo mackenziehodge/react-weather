@@ -10,9 +10,9 @@ export default function App() {
       <WeatherSearch />
     </div>
     <div className="footer"><a href="https://github.com/mackenziehodge/react-weather" className="code-link">
-         Open Sourced Code
+         Open Sourced Code {""}
       </a> 
-      by Mackenzie Hodge
+       by <a href="https://www.petraits.org"> Mackenzie Hodge</a>
       </div>
       </div>
   );
